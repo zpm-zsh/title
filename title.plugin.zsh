@@ -1,6 +1,6 @@
 _show_title(){
   echo -ne '\033]0;'
-  print -Pn $(echo $PROMPT_TITLE) | sed 's/\x1b\[[0-9;]*m//g'
+  print -Pn "$PROMPT_TITLE" | sed 's/\x1b\[[0-9;]*m//g'
   echo -ne '\007'
 }
 
