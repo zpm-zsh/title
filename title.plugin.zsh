@@ -1,8 +1,8 @@
 _show_title(){
-  echo -ne '\033]0;'
-  print -Pn "$PROMPT_TITLE" | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g'
-  echo -ne '\007'
+  print -Pn "\033]0;${PROMPT_TITLE}\007"
 }
 
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _show_title
 _show_title
-precmd_functions+=(_show_title)
+
